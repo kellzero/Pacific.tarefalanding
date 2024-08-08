@@ -1,0 +1,44 @@
+@use 'hero';
+@use 'header';
+@use 'elenco';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: rgb(1, 8, 26);
+    font-family: "Gupter", serif;
+}
+
+@mixin text($fontSize: 24px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: rgb(169, 202, 204);
+}
+
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+    color: rgb(169, 202, 204);
+}
+
+
+.text {
+    @include text;
+
+    @media (max-width:768px){
+        @include text(24px);
+    }
+}
+
+.title {
+    @include title;
+
+    @media (max-width:768px){
+        @include title(24px);
+    }
+}
